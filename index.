@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agro Gestão Rural</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: #2d6a4f;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+nav {
+    background: #1b4332;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #95d5b2;
+}
+
+.banner {
+    background: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    );
+    background-color: #40916c;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.banner h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #2d6a4f;
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+button {
+    background: #40916c;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2d6a4f;
+}
+
+.artigo {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.artigo h2 {
+    color: #2d6a4f;
+    margin-bottom: 15px;
+}
+
+footer {
+    background: #1b4332;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .banner h2 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>🚜 Agro Gestão Rural</h1>
+        <p>Tecnologia e conhecimento para aumentar sua produtividade</p>
+    </div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Mercado</a></li>
+        <li><a href="#">Plantio</a></li>
+        <li><a href="#">Pecuária</a></li>
+        <li><a href="#">Contato</a></li>
+    </ul>
+</nav>
+
+<section class="banner">
+    <div class="container">
+        <h2>Transformando o campo com informação</h2>
+        <p>Artigos, dicas e ferramentas para o produtor rural moderno.</p>
+    </div>
+</section>
+
+<main class="container">
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>🌱 Manejo do Solo</h3>
+            <p>Aprenda técnicas para aumentar a fertilidade e reduzir custos.</p>
+            <button onclick="mostrarArtigo('solo')">Ler Mais</button>
+        </div>
+
+        <div class="card">
+            <h3>🐄 Pecuária Inteligente</h3>
+            <p>Estratégias para melhorar a saúde e produtividade do rebanho.</p>
+            <button onclick="mostrarArtigo('pecuaria')">Ler Mais</button>
+        </div>
+
+        <div class="card">
+            <h3>📈 Gestão Financeira</h3>
+            <p>Controle despesas, receitas e aumente sua rentabilidade.</p>
+            <button onclick="mostrarArtigo('financeiro')">Ler Mais</button>
+        </div>
+
+    </section>
+
+    <section class="artigo">
+        <h2>Conteúdo</h2>
+        <div id="conteudo">
+            Clique em um dos artigos acima para visualizar o conteúdo.
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Agro Gestão Rural - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+const artigos = {
+    solo: `
+        <h3>Manejo do Solo</h3>
+        <p>
+            Um solo saudável é a base de uma produção eficiente.
+            Realize análises periódicas, utilize adubação adequada
+            e pratique a rotação de culturas para preservar os nutrientes.
+        </p>
+    `,
+
+    pecuaria: `
+        <h3>Pecuária Inteligente</h3>
+        <p>
+            O acompanhamento nutricional e sanitário do rebanho
+            reduz perdas e melhora o desempenho produtivo.
+            Sistemas de monitoramento ajudam na tomada de decisão.
+        </p>
+    `,
+
+    financeiro: `
+        <h3>Gestão Financeira Rural</h3>
+        <p>
+            Registrar despesas e receitas permite identificar gargalos,
+            planejar investimentos e aumentar a lucratividade da propriedade.
+        </p>
+    `
+};
+
+function mostrarArtigo(tipo) {
+    document.getElementById("conteudo").innerHTML = artigos[tipo];
+}
+</script>
+
+</body>
+</html>
